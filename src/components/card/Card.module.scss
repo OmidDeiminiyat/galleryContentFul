@@ -1,0 +1,11 @@
+.gallery {
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    img{
+        width: 100%;
+        
+    }
+}
