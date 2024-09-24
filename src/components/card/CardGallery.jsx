@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import * as contentful from "contentful";
-export const Cards = (props) => {
+import { createClient } from 'contentful';
+export const Cards = ({props}) => {
     
 const [data, setData] = useState(null);
+
 console.log(data);
 
 const client = contentful.createClient({
@@ -25,7 +27,19 @@ client.getEntries({
     return (
         <>
         <figure>
-       <h1></h1>
+
+        <div>
+      {data.items.map((item, index) =>{
+        return(
+            <>
+            <h1>{item.fields.description}</h1>
+            <img src={item.fields.image1.fields.file.url} alt="" />
+            </>
+           
+        )
+      })}
+
+    </div>
       </figure>
         </>
     )
