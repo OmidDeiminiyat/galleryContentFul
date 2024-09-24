@@ -16,7 +16,8 @@ const client = contentful.createClient({
 })
 useEffect(() => {
 client.getEntries({
-  content_type: "Gallery"
+  content_type: "Gallery",
+
 })
   .then((entry) => {
     setData(entry)
@@ -33,7 +34,7 @@ client.getEntries({
         return(
             <>
             <figure>
-            <img src={item.fields.image1.fields.file.url} alt="" />
+            <img src={item.fields.image1.fields.file.url} alt="Vikings" />
             <figcaption>
                 <p>{item.fields.image1.fields.title}</p>
             </figcaption>

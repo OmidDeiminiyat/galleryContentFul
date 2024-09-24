@@ -12,6 +12,9 @@
             min-height: 250px;
             margin: 0;
             padding: 0;
+            &:hover{
+                box-shadow: 0px 0px 8px 1px rgba(255,253,253,0.79);
+            }
         }
         figcaption{
             background-color: rgba(195, 105, 41, 0.741);
@@ -24,3 +27,4 @@
     }
     
 }
+
