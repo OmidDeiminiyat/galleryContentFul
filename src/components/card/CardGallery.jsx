@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import * as contentful from "contentful";
 import { createClient } from 'contentful';
+import style from './Card.module.scss';
 export const Cards = ({props}) => {
     
 const [data, setData] = useState(null);
@@ -26,20 +27,17 @@ client.getEntries({
 
     return (
         <>
-        <figure>
+        <figure className={style.gallery}>
 
-        <div>
-      {data.items.map((item, index) =>{
+      {data?.items?.map((item, index) =>{
         return(
             <>
-            <h1>{item.fields.description}</h1>
             <img src={item.fields.image1.fields.file.url} alt="" />
             </>
            
         )
       })}
 
-    </div>
       </figure>
         </>
     )
