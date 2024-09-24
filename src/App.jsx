@@ -7,7 +7,7 @@ import { Header } from './components/header/Header';
 import * as contentful from "contentful";
 import Footer from "./components/footer/Footer";
 
-function App()
+function App() {
 	return (
 		<>
 			 <Header />
