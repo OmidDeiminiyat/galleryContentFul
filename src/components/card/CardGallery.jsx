@@ -18,6 +18,7 @@ useEffect(() => {
 client.getEntries({
   content_type: "Gallery",
 
+
 })
   .then((entry) => {
     setData(entry)
