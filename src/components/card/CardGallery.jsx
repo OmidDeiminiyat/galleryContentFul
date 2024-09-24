@@ -27,18 +27,24 @@ client.getEntries({
 
     return (
         <>
-        <figure className={style.gallery}>
-
-      {data?.items?.map((item, index) =>{
+        <div className={style.gallery} >
+        
+        {data?.items?.map((item, index) =>{
         return(
             <>
+            <figure>
             <img src={item.fields.image1.fields.file.url} alt="" />
+            <figcaption>
+                <p>{item.fields.image1.fields.title}</p>
+            </figcaption>
+            </figure>
             </>
            
         )
       })}
 
-      </figure>
+     
+      </div>
         </>
     )
 

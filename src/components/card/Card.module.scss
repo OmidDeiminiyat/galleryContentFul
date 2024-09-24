@@ -4,8 +4,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    img{
-        width: 100%;
-        
+    figure{
+        margin: 15px 0 0 0;
+        padding: 0;
+        img{
+            width: 100%;
+            min-height: 250px;
+            margin: 0;
+            padding: 0;
+        }
+        figcaption{
+            background-color: rgba(195, 105, 41, 0.741);
+            p{
+                margin: 0;
+                padding: 0;
+            }
+            
+        }
     }
+    
 }
