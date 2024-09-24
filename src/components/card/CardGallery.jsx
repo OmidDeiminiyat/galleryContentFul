@@ -7,7 +7,7 @@ export const Cards = ({props}) => {
     
 const [data, setData] = useState(null);
 
-//  console.log(data);
+console.log(data);
 
 const client = contentful.createClient({
   space: '0es9dhvy2g8b',
@@ -16,7 +16,9 @@ const client = contentful.createClient({
 })
 useEffect(() => {
 client.getEntries({
-  content_type: "Gallery"
+  content_type: "Gallery",
+
+
 })
   .then((entry) => {
     setData(entry)
@@ -27,18 +29,24 @@ client.getEntries({
 
     return (
         <>
-        <figure className={style.gallery}>
-
-      {data?.items?.map((item, index) =>{
+        <div className={style.gallery} >
+        
+        {data?.items?.map((item, index) =>{
         return(
             <>
-            <img src={item.fields.image1.fields.file.url} alt="" />
+            <figure>
+            <img src={item.fields.image1.fields.file.url} alt="Vikings" />
+            <figcaption>
+                <p>{item.fields.image1.fields.title}</p>
+            </figcaption>
+            </figure>
             </>
            
         )
       })}
 
-      </figure>
+     
+      </div>
         </>
     )
 
